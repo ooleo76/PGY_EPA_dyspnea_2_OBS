@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.header .subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    padding: 40px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.page-title {
+    color: #1e3c72;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+}
+
+.return-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.return-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.return-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+.info-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.info-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.info-section h3 {
+    color: #1e3c72;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.info-section h3::before {
+    content: '';
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+.patient-info {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.patient-info p {
+    font-size: 1.2rem;
+    line-height: 2;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.patient-info p:last-child {
+    margin-bottom: 0;
+}
+
+.exam-subsection {
+    margin-bottom: 25px;
+}
+
+.sub-title {
+    color: #2980b9;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #3498db;
+}
+
+.exam-detail {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.exam-detail p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+.exam-detail ul {
+    padding-left: 25px;
+}
+
+.exam-detail li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    position: relative;
+}
+
+.exam-detail li::before {
+    content: '▸';
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: -18px;
+}
+
+.vital-signs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.vital-item {
+    background: white;
+    padding: 20px 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #ecf0f1;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vital-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.vital-item:hover {
+    border-color: #3498db;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+}
+
+.vital-label {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.vital-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .return-section {
+        justify-content: center;
+    }
+    
+    .info-section {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .info-section h3 {
+        font-size: 1.4rem;
+    }
+    
+    .patient-info p {
+        font-size: 1rem;
+    }
+    
+    .sub-title {
+        font-size: 1.1rem;
+    }
+    
+    .exam-detail p,
+    .exam-detail li {
+        font-size: 1rem;
+    }
+    
+    .vital-signs {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .vital-item {
+        padding: 15px 10px;
+    }
+    
+    .vital-value {
+        font-size: 1.2rem;
+    }
+}
