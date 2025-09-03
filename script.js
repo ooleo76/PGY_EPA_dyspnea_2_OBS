@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 this.style.transform = 'translateY(-2px)';
             }, 150);
-            
+            // 新增返回連結
+            window.location.href = 'https://ooleo76.github.io/PGY_EPA_dyspnea_2/';
+
             // 這裡可以添加實際的返回邏輯
             console.log('返回按鈕被點擊');
         });
